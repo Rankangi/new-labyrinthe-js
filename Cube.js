@@ -4,7 +4,7 @@ class Cube{
     this.y = y;
     this.color = color;
     this.len = len;
-    this.reward = 0;
+    this.reward = -2;
   }
 
   paint(){

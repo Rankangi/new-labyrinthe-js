@@ -24,7 +24,7 @@ function printGrid(){
 function paint(cube){
   fill(cube.color[0],cube.color[1],cube.color[2])
   square(cube.x,cube.y,cube.len);
-  if (cube.reward != 0){
+  if (cube.reward != -2){
     fill(0);
     textSize(15);
     textAlign(CENTER);

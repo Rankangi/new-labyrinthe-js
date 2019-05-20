@@ -10,7 +10,7 @@ class Game{
 
   update(){
     if (this.agent.env.is_end()){
-      this.eps = max(0.5,0.999*this.eps);
+      this.eps = max(0.2,0.999*this.eps);
       this.liste_pas.push(this.agent.pas);
       this.agent.env.grid[this.agent.i][this.agent.j].color = [255,255,255];
       // this.liste_reward

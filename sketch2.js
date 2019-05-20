@@ -1,7 +1,10 @@
 var champ = window.opener.game.agent.champ;
+var row = window.opener.row;
+var col = window.opener.col;
+var res = window.opener.res;
 
 function setup() {
-  createCanvas(windowWidth,windowHeight);
+  createCanvas(windowWidth-10,windowHeight-50);
   background(0);
 }
 
@@ -11,8 +14,8 @@ function draw(){
 }
 
 function printGrid(){
-  for (var i = 0 ; i<10 ; i++){
-    for (var j = 0 ; j<10 ; j++){
+  for (var i = 0 ; i<row ; i++){
+    for (var j = 0 ; j<col ; j++){
       paint(champ.grid[i][j]);
     }
   }
@@ -23,7 +26,7 @@ function paint(cube){
   square(cube.x,cube.y,cube.len);
   if (cube.reward != 0){
     fill(0);
-    textSize(40);
+    textSize(15);
     textAlign(CENTER);
     text(cube.reward + "" , cube.x+cube.len/2 , cube.y+cube.len*3/4.5)
   }

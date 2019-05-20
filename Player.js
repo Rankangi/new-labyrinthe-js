@@ -3,13 +3,13 @@ class Player {
     this.train = train;
     this.Q = createQ();
     this.env = new Laby();
-    this.champ = new Champ(this.Q);
+    this.champ = new Champ(this.Q,this.env);
     this.reset();
   }
 
   reset(){
-    this.i = 9;
-    this.j = 8;
+    this.i = row-2;
+    this.j = col-2;
     this.pas = 0;
   }
 

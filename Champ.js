@@ -1,5 +1,5 @@
 class Champ{
-  constructor(Q){
+  constructor(Q,Laby){
     this.Qfunct = new Qfunct();
     this.Q = Q;
     this.vect = [
@@ -8,7 +8,7 @@ class Champ{
       "←",
       "→"
     ];
-    this.laby = new Laby();
+    this.laby = Laby;
     this.set_grid();
   }
 
@@ -18,10 +18,10 @@ class Champ{
     for (var i = 0 ; i<row ; i++){//
       this.grid.push([]);
       for (var j = 0 ; j<col ; j++){//
-        cube = new Cube(windowWidth/3.5+j*75,100+i*75,[255,255,255],70)
+        cube = new Cube(j*res+20,i*res+10,[255,255,255],res);
         this.grid[i].push(cube);
-        if (this.laby.grid[i][j].color == "150,150,150"){
-          this.grid[i][j].color = [150,150,150];
+        if (this.laby.grid[i][j].color != "255,255,255"){
+          this.grid[i][j].color = this.laby.grid[i][j].color;
         }
       }
     }
